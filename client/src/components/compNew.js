@@ -5,12 +5,13 @@ import {Link} from 'react-router';
 import Compressor from './compressor';
 
 class compNew extends Component {
+    static contextTypes = {
+        router:PropTypes.object
+    };
     constructor(props){
         super(props);
 
-        this.state={
-            name:""
-        };
+        this.state={};
         this.onChange=this.onChange.bind(this);
         this.create=this.create.bind(this);
     }
@@ -25,11 +26,7 @@ class compNew extends Component {
                 type:'success',
                 message:'Compressor created'
             });
-            this.setState({
-                name:"",
-                low:{},
-                high:{}
-            });
+            this.context.router.push('/');
         });
     }
     render(){

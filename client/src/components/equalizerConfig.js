@@ -1,43 +1,40 @@
 import React, { Component } from 'react';
 
 export default class EqualizerConfig extends Component{
+    static defaultProps = {
+        data:{
+            mid:{}
+        }
+    }
     constructor(props){
         super(props);
 
-        this.state={};
         this.setBand = this.setBand.bind(this);
         this.setValue = this.setValue.bind(this);
         this.setMidValue = this.setMidValue.bind(this);
         this.setMidBand = this.setMidBand.bind(this);
     }
     setBand(ev){
-        let config = this.state;
+        let config = this.props.data;
         config.band = ev.target.checked;
-        this.setState(config);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(config);
     }
     setMidBand(ev){
-        let config = this.state;
-        if(!config.mid) config.mid = {};
+        let config = this.props.data;
         config.mid.band = ev.target.checked;
-        this.setState(config);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(config);
     }
     setValue(ev){
-        let config = this.state;
+        let config = this.props.data;
         config[ev.target.name] = ev.target.value;
-        this.setState(config);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(config);
     }
     setMidValue(ev){
-        let config = this.state;
-        if(!config.mid) config.mid = {};
+        let config = this.props.data;
         config.mid[ev.target.name] = ev.target.value;
-        this.setState(config);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(config);
     }
     render(){
-        if(!this.props.data.mid) this.props.data.mid = {};
         return(
             <div>
                 <div className="form-group">

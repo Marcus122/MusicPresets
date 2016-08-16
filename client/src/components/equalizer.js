@@ -3,35 +3,39 @@ import EqualizerConfig from './equalizerConfig';
 import {Link} from 'react-router';
 
 export default class Equalizer extends Component{
+    static defaultProps = {
+        equalizer:{
+            high:{
+                mid:{}
+            },
+            low:{
+                 mid:{}
+            },
+            name:""
+        }
+    }
     constructor(props){
         super(props);
 
-        this.state={};
         this.setName = this.setName.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
     setEQConfig(data,type){
-        let equalizer = this.state;
+        let { equalizer } = this.props;
         equalizer[type] = data;
-        this.setState(equalizer);
-         if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(equalizer);
     }
     setName(ev){
-        let equalizer = this.state;
+        let { equalizer } = this.props;
         equalizer.name = ev.target.value;
-        this.setState(equalizer);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(equalizer);
     }
     onSubmit(ev){
         ev.preventDefault();
         if(this.props.onSave) this.props.onSave();
     }
     render(){
-        let high = this.props.equalizer ? this.props.equalizer.high : {};
-        if(!high) high = {};
-        let low = this.props.equalizer ? this.props.equalizer.low : {};
-        if(!low) low = {};
-        const name = this.props.equalizer ? this.props.equalizer.name : "";
+        const {high, low ,name } = this.props.equalizer;
         return(
             <form className="equalizer form-horizontal" onSubmit={this.onSubmit}>
                 <div className="form-group">

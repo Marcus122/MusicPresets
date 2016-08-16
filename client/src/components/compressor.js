@@ -6,15 +6,13 @@ export default class Equalizer extends Component{
     constructor(props){
         super(props);
 
-        this.state={};
         this.setValue = this.setValue.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
     setValue(ev){
-        let compressor = this.state;
+        let { compressor } = this.props;
         compressor[ev.target.name]= ev.target.value;
-        this.setState(compressor);
-        if(this.props.onChange) this.props.onChange(this.state);
+        if(this.props.onChange) this.props.onChange(compressor);
     }
     onSubmit(ev){
         ev.preventDefault();
@@ -46,7 +44,7 @@ export default class Equalizer extends Component{
                 <div className="form-group">
                     <label className="col-sm-2 control-label">Ratio</label>
                     <div className="col-sm-10">
-                        <input type="text" name="ratio" pattern="/^[0-9]+:[0-9]+$/" className="form-control" onChange={this.setValue} value={compressor.ratio}/>
+                        <input type="text" name="ratio" pattern="^[0-9]+:[0-9]+$" className="form-control" onChange={this.setValue} value={compressor.ratio}/>
                     </div>
                 </div>
                  <div className="form-group">

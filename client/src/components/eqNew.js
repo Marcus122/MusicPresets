@@ -4,15 +4,22 @@ import { createEQ, addMessage } from '../actions/index';
 import {Link} from 'react-router';
 import Equalizer from './equalizer';
 
+const initialState = {
+    name:"",
+    low:{
+        mid:{}
+    },
+    high:{
+        mid:{}
+    }
+};
 class EQEdit extends Component {
+    static contextTypes = {
+        router:PropTypes.object
+    };
     constructor(props){
         super(props);
-
-        this.state={
-            name:"",
-            low:{},
-            high:{}
-        };
+        this.state=initialState;
         this.onChange=this.onChange.bind(this);
         this.create=this.create.bind(this);
     }
@@ -27,11 +34,7 @@ class EQEdit extends Component {
                 type:'success',
                 message:'EQ created'
             });
-            this.setState({
-                name:"",
-                low:{},
-                high:{}
-            });
+            this.context.router.push('/');
         });
     }
     render(){
