@@ -15,6 +15,13 @@ cd server
 npm install
 node server
 ```
+Create a server/config.js file for database host and name
+```javascript
+module.exports = {
+    host:'localhost',
+    database:'mg'
+} 
+```
 
 The client uses react and redux to edit the presets and connect to the API.
 
