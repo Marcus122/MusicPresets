@@ -47,6 +47,8 @@ Delete Compressor DELETE /api/v1/compressors/:id
 
 Future development
 
+```javascript
 Export the schema in json and build forms dynamically in the gui
 Convert checkboxes to switches for the band in the gui
 Another API to create instruments so that instruments can share presets of equalizers and compressors
+```
