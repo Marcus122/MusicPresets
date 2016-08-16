@@ -1,5 +1,7 @@
 # MusicPresets
-Edit Presets
+API to Edit User Presets with a simple GUI frontend
+
+Get/Create/Update presets for equalizers and compressors
 
 To run the server
 ```javascript
