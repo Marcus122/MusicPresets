@@ -6,7 +6,7 @@ const compressorSchema = new Schema({
     attack:{type:Number,min:0},
     release:{type:Number,min:0},
     threshold:{type:Number},
-    ratio:{type:Number,
+    ratio:{type:String,
         validate: {
           validator: function(v) {
             return /^[0-9]+:[0-9]+$/.test(v);
