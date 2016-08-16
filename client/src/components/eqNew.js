@@ -39,12 +39,16 @@ class EQEdit extends Component {
     }
     render(){
         return(
-            <div>
-                <div className="container">
-                    <h2>New Equalizer</h2>
-                    <Link to="/">Back</Link>
+            <div className="panel panel-default">
+                <div className="panel-heading clearfix">
+                    <h3 className="panel-title">
+                        <span>New Equalizer</span>
+                    </h3>
                 </div>
-                <Equalizer equalizer={this.state} onChange={this.onChange} onSave={this.create}/>
+                <div className="panel-body">
+                    <Link to="/">Back</Link>
+                    <Equalizer equalizer={this.state} onChange={this.onChange} onSave={this.create}/>
+                </div>
             </div>
         );
     }

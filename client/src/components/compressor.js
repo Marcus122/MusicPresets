@@ -59,7 +59,7 @@ export default class Equalizer extends Component{
                         <input type="number" name="makeUp" className="form-control" onChange={this.setValue} value={compressor.makeup}/>
                     </div>
                 </div>
-                <div className="form-group">
+                <div className="form-group buttons">
                     <button type="submit" className="btn btn-default save">Save</button>
                     <Link to="/">
                         <button type="button" className="btn btn-danger">Cancel</button>

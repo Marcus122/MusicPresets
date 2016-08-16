@@ -49,7 +49,7 @@ export default class Equalizer extends Component{
 
                 <h3>High</h3>
                 <EqualizerConfig data={high} onChange={data => this.setEQConfig(data,'high')}/>
-                <div className="form-group">
+                <div className="form-group buttons">
                     <button type="submit" className="btn btn-default save">Save</button>
                     <Link to="/">
                         <button type="button" className="btn btn-danger">Cancel</button>

@@ -52,17 +52,19 @@ class EQEdit extends Component {
         }
 
         return(
-            <div>
-                <div className="container">
-                    <h2>Edit Equalizer</h2>
-                    <div className="clearfix edit-header">
-                        <Link to="/">Back</Link>
+            <div className="panel panel-default">
+                <div className="panel-heading clearfix">
+                    <h3 className="panel-title">
+                        <span>Edit Equalizer</span>
                         <button 
                             className="btn btn-danger pull-right delete" 
                             onClick={this.onDelete}>Delete EQ</button>
-                    </div>
+                    </h3>
                 </div>
-                <Equalizer equalizer={this.state} onChange={this.onChange} onSave={this.update}/>
+                <div className="panel-body">
+                    <Link to="/">Back</Link>
+                    <Equalizer equalizer={this.state} onChange={this.onChange} onSave={this.update}/>
+                </div>
             </div>
         );
     }

@@ -51,17 +51,19 @@ class editComp extends Component {
         }
 
         return(
-            <div>
-                <div className="container">
-                    <h2>Edit Compressor</h2>
-                    <div className="clearfix edit-header">
-                        <Link to="/">Back</Link>
-                        <button 
+            <div className="panel panel-default">
+                <div className="panel-heading clearfix">
+                    <h3 className="panel-title">
+                    <span>Edit Compressor</span>
+                    <button 
                             className="btn btn-danger pull-right delete" 
                             onClick={this.onDelete}>Delete Compressor</button>
-                    </div>
+                    </h3>
                 </div>
-                <Compressor compressor={this.state} onChange={this.onChange} onSave={this.update}/>
+                <div className="panel-body">
+                    <Link to="/">Back</Link>
+                    <Compressor compressor={this.state} onChange={this.onChange} onSave={this.update}/>
+                </div>
             </div>
         );
     }
