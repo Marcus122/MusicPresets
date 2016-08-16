@@ -1,0 +1,24 @@
+.form-group{
+    overflow:hidden;
+}
+.save{
+    margin-right:10px;
+}
+.delete{
+    margin-bottom:10px;
+}
+.alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+.alert span{
+    padding:50px 20px;
+}
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+.edit-header{
+    margin-bottom:20px;
+}
